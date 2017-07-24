@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.lyq.myapp.jeecg.util.JeecgUtil;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -24,9 +26,7 @@ public class Demo2Activity extends AppCompatActivity {
         //创建okHttpClient对象
         OkHttpClient mOkHttpClient = new OkHttpClient();
         //创建一个Request
-        String ip = "http://119.29.78.148:8080/";
-        //        String ip = "http://localhost:8180/";
-        String url = ip + "jeecg/wsWorkLogController.do?list&tableName=ssj_tally&id=402847ed5d4a5138015d4a5138fd0000&sign=735CE07A2AB9C1872983B09C85A770D9";
+        String url = JeecgUtil.JEECGPATH + "/wsWorkLogController.do?list&tableName=ssj_tally&id=402847ed5d4a5138015d4a5138fd0000&sign=735CE07A2AB9C1872983B09C85A770D9";
         final Request request = new Request.Builder()
                 .url(url)
                 .build();

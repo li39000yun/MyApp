@@ -1,5 +1,6 @@
 package com.lyq.myapp.jeecg.util;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,6 +24,18 @@ public class DateUtilsEx {
         if (w < 0)
             w = 0;
         return weekDays[w];
+    }
+
+    /**
+     * 传入Unix时间戳(Unix timestamp)，返回日期
+     *
+     * @param dateStr Unix时间戳(Unix timestamp),eg1493222400000
+     * @return 年月日yyyy-MM-dd;eg:2017-04-27
+     */
+    public static String formatDate(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date date = new Date(Long.parseLong(dateStr));
+        return sdf.format(date);
     }
 
 }

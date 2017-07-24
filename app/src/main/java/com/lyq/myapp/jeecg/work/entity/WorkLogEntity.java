@@ -1,10 +1,5 @@
 package com.lyq.myapp.jeecg.work.entity;
 
-import com.lyq.myapp.jeecg.util.DateUtilsEx;
-
-import java.util.Date;
-import java.lang.String;
-
 /**
  * @author onlineGenerator
  * @version V1.0
@@ -29,7 +24,7 @@ public class WorkLogEntity implements java.io.Serializable {
     /**
      * 创建日期
      */
-    private long createDate;
+    private String createDate;
     /**
      * 更新人名称
      */
@@ -41,7 +36,7 @@ public class WorkLogEntity implements java.io.Serializable {
     /**
      * 更新日期
      */
-    private long updateDate;
+    private String updateDate;
     /**
      * 所属部门
      */
@@ -69,7 +64,7 @@ public class WorkLogEntity implements java.io.Serializable {
     /**
      * 日期
      */
-    private long date;
+    private String date;
 
     /**
      * 方法: 取得java.lang.String
@@ -257,31 +252,31 @@ public class WorkLogEntity implements java.io.Serializable {
         this.week = week;
     }
 
-    public long getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(long createDate) {
-        this.createDate = createDate;
-    }
-
-    public long getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(long updateDate) {
-        this.updateDate = updateDate;
-    }
-
     public String getWeek() {
         return week;
     }
 
-    public long getDate() {
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
+
+    public String getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(String updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public String getDate() {
         return date;
     }
 
-    public void setDate(long date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }
