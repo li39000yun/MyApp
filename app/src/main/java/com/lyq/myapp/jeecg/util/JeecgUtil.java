@@ -7,7 +7,10 @@ package com.lyq.myapp.jeecg.util;
 public class JeecgUtil {
 
     // 项目地址
-//    public static final String JEECGPATH = "http://localhost:8180/jeecg";
-    public static final String JEECGPATH = "http://demo.tunnel.qydev.com/jeecg";
+    public static final String JEECGPATH_XIAOXIN = "http://demo.tunnel.qydev.com/jeecg";
+    public static final String JEECGPATH_SONY = "http://pro.tunnel.qydev.com/jeecg";
+
+    // 默认地址，可设置切换
+    public static String JEECGPATH = JEECGPATH_XIAOXIN;
 
 }

@@ -14,7 +14,7 @@ import com.lyq.myapp.jeecg.work.entity.WorkLogEntity;
 /**
  * 查看日志
  */
-public class EditWorkLogActivity extends AppCompatActivity implements View.OnClickListener {
+public class WorkLogViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button addWorkEdit = null;
     private Button addWorkBack = null;
@@ -26,7 +26,7 @@ public class EditWorkLogActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_work_log);
+        setContentView(R.layout.work_log_view);
         initView();// 初始化界面
     }
 
@@ -49,8 +49,14 @@ public class EditWorkLogActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        // 提交
         if (v.getId() == addWorkEdit.getId()) {
+            // 跳转到修改日志界面
+            Intent intent = new Intent();
+            intent.setClass(this, WorkLogEditActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("workLog", workLog);// 设置id
+            intent.putExtras(bundle);
+            startActivity(intent);
         } else if (v.getId() == addWorkBack.getId()) {
             // 返回
             finish();

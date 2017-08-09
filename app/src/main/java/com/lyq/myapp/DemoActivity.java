@@ -1,19 +1,12 @@
 package com.lyq.myapp;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.lyq.myapp.demo.Example01;
 import com.lyq.myapp.demo.Jeecg;
 import com.lyq.myapp.jeecg.work.entity.WorkLogEntity;
 
@@ -51,7 +44,7 @@ public class DemoActivity extends AppCompatActivity {
         //配置适配器
         SimpleAdapter adapter = new SimpleAdapter(this,
                 mylist,//数据源
-                R.layout.my_listitem,//显示布局
+                R.layout.work_log_list_listitem,//显示布局
                 new String[]{"itemTitle", "itemText"}, //数据源的属性字段
                 new int[]{R.id.itemTitle, R.id.itemText}); //布局里的控件id
         //添加并且显示

@@ -20,7 +20,7 @@ public class LsActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
         list = (ListView) findViewById(R.id.MyListView);
         //组织数据源
 
@@ -44,7 +44,7 @@ public class LsActivity extends Activity {
         //配置适配器
         SimpleAdapter adapter = new SimpleAdapter(this,
                 mylist,//数据源
-                R.layout.my_listitem,//显示布局
+                R.layout.work_log_list_listitem,//显示布局
                 new String[]{"itemTitle", "itemText"}, //数据源的属性字段
                 new int[]{R.id.itemTitle, R.id.itemText}); //布局里的控件id
         //添加并且显示

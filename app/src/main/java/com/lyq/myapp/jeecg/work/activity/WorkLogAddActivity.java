@@ -1,4 +1,4 @@
-package com.lyq.myapp;
+package com.lyq.myapp.jeecg.work.activity;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.lyq.myapp.R;
 import com.lyq.myapp.jeecg.util.JeecgUtil;
 import com.lyq.myapp.jeecg.util.JsonUtil;
 import com.lyq.myapp.jeecg.util.SignatureUtil;
@@ -38,7 +39,7 @@ import okhttp3.Response;
 /**
  * 添加日志
  */
-public class AddWorkLogActivity extends AppCompatActivity implements View.OnClickListener {
+public class WorkLogAddActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button addWorkSumbit = null;
     private Button addWorkBack = null;
@@ -76,7 +77,7 @@ public class AddWorkLogActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_work_log);
+        setContentView(R.layout.work_log_add);
 
         // 初始化按钮
         addWorkSumbit = (Button) findViewById(R.id.addWorkSumbit);
@@ -107,7 +108,7 @@ public class AddWorkLogActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void showDatePickDlg() {
-        DatePickerDialog  dateDlg = new DatePickerDialog(AddWorkLogActivity.this,
+        DatePickerDialog  dateDlg = new DatePickerDialog(WorkLogAddActivity.this,
                 d,
                 dateAndTime.get(Calendar.YEAR),
                 dateAndTime.get(Calendar.MONTH),
@@ -126,6 +127,7 @@ public class AddWorkLogActivity extends AppCompatActivity implements View.OnClic
             workLogEntity = new WorkLogEntity();
             workLogEntity.setTitle(addWorkTitle.getText().toString());
             workLogEntity.setContent(addWorkContent.getText().toString());
+            workLogEntity.setDate(addWorkDate.getText().toString());
 
             // 开启一个子线程，进行网络操作，等待有返回结果，使用handler通知UI
             new Thread(networkTask).start();
@@ -211,7 +213,7 @@ public class AddWorkLogActivity extends AppCompatActivity implements View.OnClic
             String rvalue = data.getString("rvalue");
             TableJson tableJson = (TableJson) JsonUtil.stringToObject(rvalue, TableJson.class);
             //addWorkContent.setText(tableJson.getMsg());// 设置返回结果到内容上
-            new AlertDialog.Builder(AddWorkLogActivity.this)
+            new AlertDialog.Builder(WorkLogAddActivity.this)
                     .setTitle("提示")
                     .setMessage(tableJson.getMsg())
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加确定按钮

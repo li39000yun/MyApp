@@ -76,12 +76,22 @@ public class SignatureUtil {
 //    	for(Map.Entry<String, String> entry:t.entrySet()){    
 //    	     System.out.println(entry.getKey()+"--->"+entry.getValue());    
 //    	}  
-        String key = "26F72780372E84B6CFAED6F7B19139CC47B1912B6CAED753";
+      /*  String key = "26F72780372E84B6CFAED6F7B19139CC47B1912B6CAED753";
         Map<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("tableName", "jform_le_main");
         paramMap.put("id", "402813815398698b015398698b710000");
         paramMap.put("data", "{jform_le_main:[{id=\"402813815398698b015398698b710000\",name:\"ceshi111111\",sex:1,remark:\"java developer\"}],jform_le_subone:[{main_id=\"402813815398698b015398698b710000\",name:\"ceshi111111\",sex:1,remark:\"java developer\"}],jform_le_submany:[{main_id=\"402813815398698b015398698b710000\",name:\"ceshi111111\",sex:1,remark:\"java developer\"},{name:\"ceshi111111\",sex:1,remark:\"java developer\"}]}");
         paramMap.put("method", "updateFormInfo");
+        System.out.println(createSign(paramMap, key));*/
+
+//        http://localhost:8180/jeecg/wsWorkLogController.do?list&tableName=ssj_tally&id=402847ed5d4a5138015d4a5138fd0000&sign=19F985722547B579B4D5A13F766E3C3B
+
+        String key = "26F72780372E84B6CFAED6F7B19139CC47B1912B6CAED753";
+        Map<String, String> paramMap = new HashMap<String, String>();
+        paramMap.put("tableName", "ssj_tally");
+        paramMap.put("id", "402847ed5d4a5138015d4a5138fd0000");
+//        paramMap.put("data", "{jform_le_main:[{id=\"402813815398698b015398698b710000\",name:\"ceshi111111\",sex:1,remark:\"java developer\"}],jform_le_subone:[{main_id=\"402813815398698b015398698b710000\",name:\"ceshi111111\",sex:1,remark:\"java developer\"}],jform_le_submany:[{main_id=\"402813815398698b015398698b710000\",name:\"ceshi111111\",sex:1,remark:\"java developer\"},{name:\"ceshi111111\",sex:1,remark:\"java developer\"}]}");
+        paramMap.put("method", "getFormInfo");
         System.out.println(createSign(paramMap, key));
     }
 }

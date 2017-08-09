@@ -7,37 +7,34 @@
     android:fitsSystemWindows="true"
     tools:context="com.lyq.myapp.MainActivity">
 
-    <LinearLayout android:id="@+id/LinearLayout01"
-        android:layout_width="fill_parent" android:layout_height="fill_parent"
+    <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        >
+        android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <Button
+            android:id="@+id/buttonWorkLog"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="测试按钮"
-                android:id="@+id/buttonTest" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="添加日志"
-                android:id="@+id/addWorkButton"
-                android:layout_gravity="center_horizontal" />
-
-        </LinearLayout>
-
-
-
-        <ListView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/MyListView">
-        </ListView>
+            android:text="工作日志" />
+
+        <Button
+            android:id="@+id/buttonAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="账户信息" />
+
+
+        <Button
+            android:id="@+id/buttonDemand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="需求单" />
+
+
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
