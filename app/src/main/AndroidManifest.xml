@@ -37,6 +37,8 @@
         <!-- 个人账户 -->
         <activity android:name=".jeecg.ims.activity.ImsAccountListActivity"/>
         <activity android:name=".jeecg.ims.activity.ImsAccountViewActivity"/>
+        <!--设置-->
+        <activity android:name=".jeecg.frame.SettingActivity"/>
     </application>
 
 </manifest>
